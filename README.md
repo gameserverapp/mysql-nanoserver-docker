@@ -51,7 +51,7 @@ services:
       MYSQL_ROOT_PWD: password
 
   adminer:
-    image: dshatohin/adminer-iis:latest
+    image: dshatohin/adminer-servercore:latest
     ports:
       - 8000:80
 ```
