@@ -1,4 +1,4 @@
-# MySQL 5.7 Windows Servercore Container
+# MySQL 5.7 Windows Nanoserver Container
 
 **Linux and Bash?**
 
