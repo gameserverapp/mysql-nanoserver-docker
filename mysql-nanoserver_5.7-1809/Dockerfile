@@ -6,8 +6,8 @@ LABEL maintainer "Denis Shatohin"
 
 ENV MYSQL_ROOT_PWD="_" \
     DB_NAME="_" \
-	DB_USER="_" \
-	DB_USER_PWD="_" \
+    DB_USER="_" \
+    DB_USER_PWD="_" \
     MYSQL_PWD_PATH="C:\ProgramData\Docker\secrets\sa-password"
 
 ENV vcredist_url="https://download.microsoft.com/download/2/E/6/2E61CFA4-993B-4DD4-91DA-3737CD5CD6E3/vcredist_x64.exe" \
@@ -22,7 +22,7 @@ WORKDIR /
 
 RUN Invoke-WebRequest $env:vcredist_url -OutFile "vcredist.exe" ; \
     .\vcredist.exe /Q ; \
-	Start-Sleep -s 5 ; \
+    Start-Sleep -s 5 ; \
     Remove-Item  "vcredist.exe" -Force 
 
 RUN Invoke-WebRequest $env:mysql_url -OutFile "mysql.zip" ; \
