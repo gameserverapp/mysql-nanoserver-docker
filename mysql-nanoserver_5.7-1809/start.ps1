@@ -22,7 +22,7 @@ if(($DB_NAME -ne "_") -and ($DB_USER -ne "_") -and ($DB_USER_PWD -ne "_"))
 {
     Write-Verbose "Creating database $DB_NAME"
     $DB_INIT = "CREATE DATABASE" + " $DB_NAME " + "DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;" `
-    + "GRANT ALL ON" + " $DB_NAME.* " + "to" + " '$DB_USER'@'%' IDENTIFIED BY" + " '" + $DB_USER_PWD + "';" `
+    + "GRANT ALL ON *.* to '$DB_USER'@'%' IDENTIFIED BY" + " '" + $DB_USER_PWD + "';" `
     + "FLUSH PRIVILEGES;"
     mysql --user=root --execute="$DB_INIT"
 }
