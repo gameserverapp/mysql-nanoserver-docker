@@ -30,7 +30,7 @@ RUN Invoke-WebRequest $env:mysql_url -OutFile "mysql.zip" ; \
     Rename-Item "C:\mysql-5.7.27-winx64" "C:\MySQL" ; \
     Remove-Item "mysql.zip" -Force
 
-RUN Set-Content "C:\MySQL\my.ini" '[mysqld]`r`nbasedir=""C:\MySQL""`r`ndatadir=""C:\MySQL\DATA""`r`nexplicit_defaults_for_timestamp=1' ; \
+RUN Set-Content "C:\MySQL\my.ini" '[mysqld]`r`nbasedir=""C:\MySQL""`r`ndatadir=""C:\MySQL\DATA""`r`nexplicit_defaults_for_timestamp=1`r`nskip-name-resolve' ; \
     New-Item "C:\MySQL\DATA" -ItemType "Directory" | Out-Null ; \
     "C:\MySQL\bin\mysqld.exe" --initialize-insecure ; \
     "C:\MySQL\bin\mysqld.exe --install
